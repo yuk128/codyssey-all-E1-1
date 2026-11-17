@@ -1,0 +1,7 @@
+﻿services:
+  web:
+    image: my-nginx:1.0
+    ports:
+      - "${HOST_PORT}:80"      # .env의 HOST_PORT 값 사용
+    environment:
+      - APP_MODE=${APP_MODE}   # 컨테이너 안에 환경 변수로 주입

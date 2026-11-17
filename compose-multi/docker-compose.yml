@@ -1,0 +1,9 @@
+﻿services:
+  web:                        # 서비스 1: 내가 만든 웹 서버
+    image: my-nginx:1.0
+    ports:
+      - "8092:80"             # 외부에서 접속하는 문
+    depends_on:
+      - api                   # api가 먼저 뜨도록 순서 지정
+  api:                        # 서비스 2: 보조 서비스 (외부 포트 없음)
+    image: nginx:alpine
